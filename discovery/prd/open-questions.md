@@ -5,7 +5,7 @@ Unresolved decisions that block or shape implementation. Resolve here, then upda
 ## Product
 
 1. **Primary persona** — Decider (casual tonight) vs Enthusiast (deep discovery)? → affects onboarding and copy. See [users-and-personas.md](../knowledge/users-and-personas.md).
-2. **Platform** — Web-first, iOS, or cross-platform from day one?
+2. ~~**Platform**~~ — **Resolved 2026-08-14 (Pallavi): Web-first.** Responsive web app; native/cross-platform not in scope for v1. Propagated to [tech-stack.md](../skills/tech-stack.md) and [prd.md](./prd.md).
 3. **Movies only vs movies + TV** — PRD assumes movies-only for v1; confirm.
 4. **Monetization** — Free, subscription, affiliate revenue, or learning project with no monetization?
 

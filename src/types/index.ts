@@ -62,6 +62,25 @@ export const STREAMING_SERVICES: { id: StreamingService; label: string }[] = [
   { id: 'disney', label: 'Disney+' },
 ]
 
+export interface MoodChip {
+  label: string
+  kind: 'genre' | 'mood'
+  value: string
+}
+
+export const MOOD_CHIPS: MoodChip[] = [
+  { label: 'Comfort', kind: 'mood', value: 'comfort' },
+  { label: 'Feel-good', kind: 'mood', value: 'feel-good' },
+  { label: 'Intense', kind: 'mood', value: 'intense' },
+  { label: 'Slow-burn', kind: 'mood', value: 'slow-burn' },
+  { label: 'Comedy', kind: 'genre', value: 'Comedy' },
+  { label: 'Sci-Fi', kind: 'genre', value: 'Sci-Fi' },
+  { label: 'Thriller', kind: 'genre', value: 'Thriller' },
+  { label: 'Romance', kind: 'genre', value: 'Romance' },
+  { label: 'Horror', kind: 'genre', value: 'Horror' },
+  { label: 'Action', kind: 'genre', value: 'Action' },
+]
+
 export const PROMPT_CHIPS = [
   'Comfort comedy under 2 hours',
   'Slow-burn sci-fi mystery',

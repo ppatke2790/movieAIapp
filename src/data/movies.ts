@@ -2,7 +2,26 @@ import type { Movie } from '../types'
 
 const poster = (path: string) => `https://image.tmdb.org/t/p/w342${path}`
 
-export const MOVIES: Movie[] = [
+// Verified real TMDB poster paths (HTTP-checked to resolve as actual images).
+const REAL_POSTERS: Record<string, string> = {
+  arrival: poster('/pEzNVQfdzYDzVK0XqxERIw2x2se.jpg'),
+  'grand-budapest': poster('/eWdyYQreja6JGCzqHWXpWHDrrPo.jpg'),
+  'get-out': poster('/tFXcEccSQMf3lfhfXKSU9iRBpa3.jpg'),
+  'before-sunrise': poster('/kf1Jb1c2JAOqjuzA3H4oDM263uB.jpg'),
+  'mad-max-fury-road': poster('/ulcAi4dKpAjHwYGS08vNyx9H6I9.jpg'),
+  parasite: poster('/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg'),
+  'paddington-2': poster('/1OJ9vkD5xPt3skC6KguyXAgagRZ.jpg'),
+  'blade-runner-2049': poster('/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg'),
+  'knives-out': poster('/pThyQovXQrw2m0s9x82twj48Jq4.jpg'),
+  her: poster('/eCOtqtfvn7mxGl6nfmq4b1exJRc.jpg'),
+  'the-big-lebowski': poster('/3bv6WAp6BSxxYvB5ozKFUYuRA8C.jpg'),
+  'a-quiet-place': poster('/nAU74GmpUk7t5iklEp3bufwDq4n.jpg'),
+  moonlight: poster('/qLnfEmPrDjJfPyyddLJPkXmshkp.jpg'),
+  'spider-verse': poster('/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg'),
+  'princess-bride': poster('/2FC9L9MrjBoGHYjYZjdWQdopVYb.jpg'),
+}
+
+const MOVIES_DATA: Movie[] = [
   {
     id: 'arrival',
     title: 'Arrival',
@@ -298,6 +317,11 @@ export const MOVIES: Movie[] = [
     ],
   },
 ]
+
+export const MOVIES: Movie[] = MOVIES_DATA.map((movie) => ({
+  ...movie,
+  posterPath: REAL_POSTERS[movie.id] ?? movie.posterPath,
+}))
 
 export function getMovieById(id: string): Movie | undefined {
   return MOVIES.find((m) => m.id === id)

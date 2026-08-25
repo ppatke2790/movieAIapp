@@ -4,7 +4,7 @@
 
 ## What this is
 
-A greenfield product in the **discovery phase**. There is no application code, README, or deployed environment yet. This `discovery/` folder is the single source of truth for product, design, and technical decisions until implementation begins.
+A product moving from **discovery into early build**. A runnable frontend scaffold now exists (React + Vite, mock data — see [tech-stack.md](../skills/tech-stack.md)) implementing the v1 screens end to end; there's no backend, real AI, or deployed environment yet. This `discovery/` folder remains the single source of truth for product, design, and technical decisions not yet reflected in code.
 
 ## Who it's for
 
@@ -18,11 +18,11 @@ Streaming catalogs and recommendation engines optimize for engagement, not for h
 
 | Area | Status |
 |------|--------|
-| Codebase | Empty — no source files |
+| Codebase | Frontend scaffold running (React + Vite, mock data, all 5 v1 screens) — see [tech-stack.md](../skills/tech-stack.md) |
 | Remote repo | Not connected |
 | Discovery docs | In progress (this folder) |
 | Design | Not started — owner is Pallavi (Designer) |
-| Implementation | Not started |
+| Implementation | Frontend in progress; backend/AI/data integration not started |
 
 ## Links
 

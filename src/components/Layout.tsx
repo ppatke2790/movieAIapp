@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { loadWatchlist } from '../lib/storage'
 
@@ -11,22 +12,20 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
 
 export default function Layout() {
   const watchlistCount = loadWatchlist().length
+  const [authOpen, setAuthOpen] = useState(false)
 
   return (
-    <div className="min-h-dvh flex flex-col">
-      <header className="sticky top-0 z-40 border-b border-white/5 bg-background/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
-          <div className="flex items-center gap-3">
-            <div
-              className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent/15 text-accent"
-              aria-hidden="true"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h14v2H4v-2zm0 4h10v2H4v-2z" />
-              </svg>
-            </div>
-            <div>
-              <p className="text-base font-semibold leading-tight">MovieAI</p>
+    <div className="flex h-full flex-col overflow-hidden">
+      <header className="shrink-0 border-b border-white/5 bg-background/90 backdrop-blur-md">
+        <div className="flex items-center justify-between gap-4 px-4 py-3 md:px-6">
+          <div>
+            <p className="text-3xl font-black leading-none tracking-tight text-accent">ReelAI</p>
+            <div className="mt-1.5 flex items-center gap-2">
+              <div className="flex gap-[3px]" aria-hidden="true">
+                {Array.from({ length: 7 }).map((_, i) => (
+                  <span key={i} className="h-1.5 w-1.5 shrink-0 rounded-[1px] bg-accent/60" />
+                ))}
+              </div>
               <p className="text-xs text-text-muted">Decide what to watch</p>
             </div>
           </div>
@@ -46,13 +45,50 @@ export default function Layout() {
             <NavLink to="/settings" className={navLinkClass}>
               Settings
             </NavLink>
+            <button
+              type="button"
+              onClick={() => setAuthOpen(true)}
+              className="min-h-11 rounded-lg border border-accent/40 px-4 py-2 text-sm font-medium text-accent transition-colors hover:bg-accent/10"
+            >
+              Sign up / Log in
+            </button>
           </nav>
         </div>
       </header>
 
-      <main className="flex-1">
+      <main className="min-h-0 flex-1 overflow-y-auto">
         <Outlet />
       </main>
+
+      {authOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+          onClick={() => setAuthOpen(false)}
+        >
+          <div
+            className="w-full max-w-sm rounded-2xl border border-white/10 bg-surface p-6"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="auth-modal-title"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 id="auth-modal-title" className="text-lg font-semibold">
+              Sign up / Log in
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-text-muted">
+              Accounts aren't available yet — ReelAI currently saves your picks and watchlist on
+              this device only. Check back soon!
+            </p>
+            <button
+              type="button"
+              onClick={() => setAuthOpen(false)}
+              className="mt-6 min-h-11 w-full rounded-xl bg-accent px-4 text-sm font-semibold text-background transition-colors hover:bg-accent-hover"
+            >
+              Got it
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

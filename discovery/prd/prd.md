@@ -43,7 +43,7 @@ See [goals-and-metrics.md](../strategy/goals-and-metrics.md). Phase 1 MVP succee
 
 ## Scope IN (v1)
 
-- Web or mobile client (platform TBD — see [open-questions.md](./open-questions.md))
+- Web app, web-first and responsive (decided 2026-08-14 — see [open-questions.md](./open-questions.md))
 - English UI first
 - One region for availability (country TBD)
 

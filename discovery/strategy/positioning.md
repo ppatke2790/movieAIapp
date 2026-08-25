@@ -12,9 +12,12 @@ AI-native movie discovery — not a streaming service, not a social network, not
 
 ## Key differentiators
 
-1. **Built for the decision** — narrow focus on choosing one title, not browsing endless catalogs.
-2. **Explains the pick** — short, spoiler-safe rationale so users trust the suggestion.
-3. **Availability-aware** (planned) — recommendations respect region and subscriptions where data allows.
+Updated 2026-08-14 after competitor research — see [competitive-landscape.md](../knowledge/competitive-landscape.md).
+
+1. **Trust through rationale** (lead differentiator) — a visible, specific "why this fits you" explanation tied to an ongoing conversation and remembered taste, not just a matched query. No direct competitor does this: WatchNext AI's matches are query-driven with thin explanation; Taranify explains by mood-color, not movie taste; general AI chat has no persistent memory.
+2. **Built for the decision** — narrow focus on choosing one title, not browsing endless catalogs.
+3. **Conversational, not search-first** — a chat thread with taste memory, vs. WatchNext AI's search bar or Taranify's one-off quiz.
+4. ~~**Availability-aware**~~ — **demoted, not a differentiator.** WatchNext AI already filters recommendations to the user's actual subscriptions across 50+ services. Still a required feature for v1 (see [PRD FR-4](../prd/prd.md)), just not something to message as unique.
 
 ## Messaging pillars
 

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "movieaiapp-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "/Users/pallavi/MovieAIapp", "--", "--port", "5173"],
+      "port": 5173
+    }
+  ]
+}

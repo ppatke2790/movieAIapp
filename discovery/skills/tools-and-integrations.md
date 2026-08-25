@@ -47,7 +47,7 @@ Third-party services in use or likely needed for MovieAIapp. **None are integrat
 | **better-layout** | Chat + detail layout, breakpoints, progressive disclosure |
 | **better-writing** | Prompt chips, empty states, error copy, AI rationale tone |
 
-**Install:** Done — all 7 skills copied to `.cursor/skills/` (manual install; `npx skills` requires Node ≥ 22.20, current machine has v20.12.2).
+**Install:** Done — all 7 skills copied to `.cursor/skills/` (manual install; `npx skills` requires Node ≥ 22.20, current machine has v20.12.2). Confirmed 2026-08-14 (Pallavi ran the install directly in terminal).
 
 **Invoke in Cursor:** Ask for a `better-interface` review, or reference a specific skill (e.g. "use better-colors for the palette").
 
